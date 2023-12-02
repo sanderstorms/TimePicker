@@ -1,106 +1,128 @@
 using System;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI {
+namespace Opulos.Core.UI;
 
-public class SpinControlTestPanel : Panel {
+public class SpinControlTestPanel : Panel
+{
+    private const string buttonText = "Example Button Style Look";
+    private const string styleNotSupported = " Style Not Supported";
 
-	const String buttonText = "Example Button Style Look";
-	const String styleNotSupported = " Style Not Supported";
-	Button btnExample = new Button { Text = buttonText, AutoSize = true, AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink };
-	Combo2 comboStyle = new Combo2 { DropDownStyle = ComboBoxStyle.DropDownList };
-	NumericUpDown nudFontSize = new NumericUpDown { Minimum = 6, Maximum = 100, Increment = 0.2m, DecimalPlaces = 1 };
-	DateTimePicker dpPicker = new DateTimePicker { Format = DateTimePickerFormat.Short, ShowUpDown = true };
-	CheckBox cbEnabled = new CheckBox { Text = "Enabled", Checked = true, AutoSize = true };
-	SpinControl scCustom = new SpinControl();
-	TextBox tbCustom = new TextBox();
-	Font font = null;
+    private readonly Button btnExample = new()
+        { Text = buttonText, AutoSize = true, AutoSizeMode = AutoSizeMode.GrowAndShrink };
 
-	public SpinControlTestPanel() {
-		Dock = DockStyle.Fill;
+    private readonly CheckBox cbEnabled = new() { Text = "Enabled", Checked = true, AutoSize = true };
+    private readonly Combo2 comboStyle = new() { DropDownStyle = ComboBoxStyle.DropDownList };
+    private readonly DateTimePicker dpPicker = new() { Format = DateTimePickerFormat.Short, ShowUpDown = true };
+    private Font font;
 
-		tbCustom.Controls.Add(scCustom);
+    private readonly NumericUpDown nudFontSize = new()
+        { Minimum = 6, Maximum = 100, Increment = 0.2m, DecimalPlaces = 1 };
 
-		int k = 0;
-		scCustom.UpClicked += delegate {
-			tbCustom.Text = k.ToString();
-			k++;
-		};
-		scCustom.DownClicked += delegate {
-			k--;
-			tbCustom.Text = k.ToString();
-		};
+    private readonly SpinControl scCustom = new();
+    private readonly TextBox tbCustom = new();
 
-		nudFontSize.ValueChanged += delegate {
-			Font oldFont = font;
-			font = new Font(Font.FontFamily, Convert.ToSingle(nudFontSize.Value), Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
-			this.Font = font;
-			if (oldFont != null)
-				oldFont.Dispose();
-		};
-		nudFontSize.Value = 8;
+    public SpinControlTestPanel()
+    {
+        Dock = DockStyle.Fill;
 
-		cbEnabled.CheckedChanged += delegate {
-			bool b = cbEnabled.Checked;
-			tbCustom.Enabled = b;
-			dpPicker.Enabled = b;
-			nudFontSize.Enabled = b;
-			btnExample.Enabled = b;
-		};
+        tbCustom.Controls.Add(scCustom);
 
-		comboStyle.Items.AddRange(new Object[] { SpinButtonStyle.Flat, SpinButtonStyle.Modern, SpinButtonStyle.Popup, SpinButtonStyle.Standard, SpinButtonStyle.System, SpinButtonStyle.ControlPaint });
-		comboStyle.SelectedItem = scCustom.ButtonStyle;
-		comboStyle.SelectedValueChanged += delegate {
-			SpinButtonStyle style = (SpinButtonStyle) comboStyle.SelectedItem;
-			scCustom.ButtonStyle = style;
-			if (style == SpinButtonStyle.Modern || style == SpinButtonStyle.ControlPaint) {
-				btnExample.Text = style + styleNotSupported;
-			} else {
-				btnExample.FlatStyle = (FlatStyle) style;
-				btnExample.Text = buttonText;
-			}
+        var k = 0;
+        scCustom.UpClicked += delegate
+        {
+            tbCustom.Text = k.ToString();
+            k++;
+        };
+        scCustom.DownClicked += delegate
+        {
+            k--;
+            tbCustom.Text = k.ToString();
+        };
 
-		};
+        nudFontSize.ValueChanged += delegate
+        {
+            var oldFont = font;
+            font = new Font(Font.FontFamily, Convert.ToSingle(nudFontSize.Value), Font.Style, Font.Unit,
+                Font.GdiCharSet, Font.GdiVerticalFont);
+            Font = font;
+            if (oldFont != null)
+                oldFont.Dispose();
+        };
+        nudFontSize.Value = 8;
 
-		int x = 0;
-		this.Padding = new Padding(10);
-		TableLayoutPanel2 p = new TableLayoutPanel2 { Dock = DockStyle.Fill };
-		p.Add(new Label3("Default NumericUpDown\r\nand Font Size"), nudFontSize, x++);
-		p.Add(new Label3("Default DateTimePicker"), dpPicker, x++);
-		p.Add(new Label3("Custom Spin Buttons") { BackColor = Color.LightYellow }, tbCustom, x++);
-		p.Add(new Label3("Custom Button Style"), comboStyle, x);
-		p.Controls.Add(btnExample, 2, x++);
-		p.Add(null, cbEnabled, x++);
-		Controls.Add(p);
-	}
+        cbEnabled.CheckedChanged += delegate
+        {
+            var b = cbEnabled.Checked;
+            tbCustom.Enabled = b;
+            dpPicker.Enabled = b;
+            nudFontSize.Enabled = b;
+            btnExample.Enabled = b;
+        };
 
-	private class TableLayoutPanel2 : TableLayoutPanel {
-		public void Add(Control c1, Control c2, int row) {
-			if (c1 != null)
-				Controls.Add(c1, 0, row);
-			if (c2 != null)
-				Controls.Add(c2, 1, row);
-		}		
-	}
+        comboStyle.Items.AddRange(new object[]
+        {
+            SpinButtonStyle.Flat, SpinButtonStyle.Modern, SpinButtonStyle.Popup, SpinButtonStyle.Standard,
+            SpinButtonStyle.System, SpinButtonStyle.ControlPaint
+        });
+        comboStyle.SelectedItem = scCustom.ButtonStyle;
+        comboStyle.SelectedValueChanged += delegate
+        {
+            var style = (SpinButtonStyle)comboStyle.SelectedItem;
+            scCustom.ButtonStyle = style;
+            if (style == SpinButtonStyle.Modern || style == SpinButtonStyle.ControlPaint)
+            {
+                btnExample.Text = style + styleNotSupported;
+            }
+            else
+            {
+                btnExample.FlatStyle = (FlatStyle)style;
+                btnExample.Text = buttonText;
+            }
+        };
 
-	private class Label3 : Label {
-		public Label3(String text) : base() {
-			Text = text;
-			AutoSize = true;
-			Anchor = AnchorStyles.Left;
-		}
-	}
+        var x = 0;
+        Padding = new Padding(10);
+        var p = new TableLayoutPanel2 { Dock = DockStyle.Fill };
+        p.Add(new Label3("Default NumericUpDown\r\nand Font Size"), nudFontSize, x++);
+        p.Add(new Label3("Default DateTimePicker"), dpPicker, x++);
+        p.Add(new Label3("Custom Spin Buttons") { BackColor = Color.LightYellow }, tbCustom, x++);
+        p.Add(new Label3("Custom Button Style"), comboStyle, x);
+        p.Controls.Add(btnExample, 2, x++);
+        p.Add(null, cbEnabled, x++);
+        Controls.Add(p);
+    }
 
-	protected override void Dispose(bool disposing) {
-		base.Dispose(disposing);
-		if (disposing) {
-			if (font != null) {
-				font.Dispose();
-				font = null;
-			}
-		}
-	}
-}
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (disposing)
+            if (font != null)
+            {
+                font.Dispose();
+                font = null;
+            }
+    }
+
+    private class TableLayoutPanel2 : TableLayoutPanel
+    {
+        public void Add(Control c1, Control c2, int row)
+        {
+            if (c1 != null)
+                Controls.Add(c1, 0, row);
+            if (c2 != null)
+                Controls.Add(c2, 1, row);
+        }
+    }
+
+    private class Label3 : Label
+    {
+        public Label3(string text)
+        {
+            Text = text;
+            AutoSize = true;
+            Anchor = AnchorStyles.Left;
+        }
+    }
 }

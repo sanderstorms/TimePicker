@@ -1,9 +1,7 @@
-using System;
+namespace Opulos.Core.Utils;
 
-namespace Opulos.Core.Utils {
-
-public enum InvokeMethod {
-	YesNormal = 0,
-	NoOnlyValidateInputs = 1,
-}
+public enum InvokeMethod
+{
+    YesNormal = 0,
+    NoOnlyValidateInputs = 1
 }

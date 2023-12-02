@@ -1,23 +1,21 @@
-using System;
+namespace Opulos.Core.Localization;
 
-namespace Opulos.Core.Localization {
+public static class Strings
+{
+    private static readonly Localizer s = new(typeof(Strings));
 
-public static class Strings {
-
-	private static Localizer s = new Localizer(typeof(Strings));
-
-	public static String OK { get { return s.Lookup("OK"); }}
-	public static String Cancel { get { return s.Lookup("Cancel"); }}
+    public static string OK => s.Lookup("OK");
+    public static string Cancel => s.Lookup("Cancel");
 }
 
-public sealed class Strings_en {
-	public const String OK = "&OK";
-	public const String Cancel = "&Cancel";
+public sealed class Strings_en
+{
+    public const string OK = "&OK";
+    public const string Cancel = "&Cancel";
 }
 
-public sealed class Strings_ja {
-	public const String OK = "&OK";
-	public const String Cancel = "キャンセル";
-}
-
+public sealed class Strings_ja
+{
+    public const string OK = "&OK";
+    public const string Cancel = "キャンセル";
 }

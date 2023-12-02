@@ -1,22 +1,21 @@
 using System;
 using System.Reflection;
+using System.Runtime.ExceptionServices;
 
-namespace Opulos.Core.Utils {
+namespace Opulos.Core.Utils;
 
-public static partial class ExceptionEx_Rethrow {
+public static class ExceptionEx_Rethrow
+{
+    public static void Rethrow(this Exception ex)
+    {
+        if (ex == null)
+            return;
 
-	public static void Rethrow(this Exception ex) {
-		if (ex == null)
-			return;
+        if (ex is TargetInvocationException && ex.InnerException != null)
+            ex = ex.InnerException;
 
-		if (ex is TargetInvocationException && ex.InnerException != null)
-			ex = ex.InnerException;
-
-		// requires NET4.5 or higher. If using lower version then comment out this line.
-		System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(ex).Throw();
-		throw ex; // avoids compiler complaints
-	}
-
-}
-
+        // requires NET4.5 or higher. If using lower version then comment out this line.
+        ExceptionDispatchInfo.Capture(ex).Throw();
+        throw ex; // avoids compiler complaints
+    }
 }

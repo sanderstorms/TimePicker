@@ -1,35 +1,34 @@
-﻿using Opulos.Core.Drawing;
-using Opulos.Core.UI;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Opulos.Core.UI;
 
-namespace MaskedTextBoxDemo {
+namespace MaskedTextBoxDemo;
 
-static class Program {
+internal static class Program
+{
+    // https://sourceforge.net/projects/time-picker/
+    [STAThread]
+    private static void Main()
+    {
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
 
-	// https://sourceforge.net/projects/time-picker/
-	[STAThread]
-	static void Main() {
-		Application.EnableVisualStyles();
-		Application.SetCompatibleTextRenderingDefault(false);
+        //TextOverlay.TestAlgorithm();
+        //return;
 
-		//TextOverlay.TestAlgorithm();
-		//return;
+        //System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ja-JP");
+        //System.Threading.Thread.CurrentThread.CurrentCulture = ci;
+        //System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
 
-		//System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ja-JP");
-		//System.Threading.Thread.CurrentThread.CurrentCulture = ci;
-		//System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+        var f = new Form();
+        f.Text = "TimePickerDemo";
+        f.ClientSize = new Size(700, 700);
 
-		Form f = new Form();
-		f.Text = "TimePickerDemo";
-		f.ClientSize = new Size(700, 700);
-	
-		var p = new MaskedTextBoxDemoPanel();
-		f.Controls.Add(p);
-		f.Font = new Font(SystemFonts.MenuFont.FontFamily, 12f, FontStyle.Regular);
-		f.StartPosition = FormStartPosition.CenterScreen;
-		Application.Run(f);
-	}
-}
+        var p = new MaskedTextBoxDemoPanel();
+        f.Controls.Add(p);
+        f.Font = new Font(SystemFonts.MenuFont.FontFamily, 12f, FontStyle.Regular);
+        f.StartPosition = FormStartPosition.CenterScreen;
+        Application.Run(f);
+    }
 }
