@@ -119,12 +119,6 @@
     <Compile Include="Test\SpinControlTestPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TimePickerControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TimePickerControl.Designer.cs">
-      <DependentUpon>TimePickerControl.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -135,9 +129,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TimePickerControl.resx">
-      <DependentUpon>TimePickerControl.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
