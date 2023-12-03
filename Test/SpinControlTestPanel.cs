@@ -1,8 +1,9 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Opulos.Core.UI;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Test;
 
 public class SpinControlTestPanel : Panel
 {

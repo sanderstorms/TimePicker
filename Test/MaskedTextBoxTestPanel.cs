@@ -4,8 +4,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Opulos.Core.UI;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Test;
 
 public class MaskedTextBoxDemoPanel : Panel
 {
@@ -63,7 +64,7 @@ public class TimePickerMillisPanel : Panel
         { Text = "Auto Close Menu (Window Changed)", AutoSize = true, Checked = AutoCloseMenuWindowChanged };
 
     private int numEvents;
-    private readonly TimePicker timePicker = new(0, false); //new TimePicker(3, true, true);
+    private readonly Opulos.Core.UI.TimePicker timePicker = new(0, false); //new TimePicker(3, true, true);
     private ToolTip tips = new();
 
     public TimePickerMillisPanel()

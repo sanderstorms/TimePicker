@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Opulos.Core.UI;
+using TimePicker.Test;
 
-namespace MaskedTextBoxDemo;
+namespace TimePicker;
 
 internal static class Program
 {
