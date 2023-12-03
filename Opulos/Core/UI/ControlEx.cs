@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Opulos.Core.Utils;
+using TimePicker.Opulos.Core.Utils;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public static class ControlEx
 {

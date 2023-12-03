@@ -7,7 +7,7 @@ using System.Windows.Forms.Layout;
 
 //using Opulos.Core.Localization;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public class MultiInputComboBox : ComboBox
 {

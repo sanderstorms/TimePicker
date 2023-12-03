@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 public class MultiKey
 {

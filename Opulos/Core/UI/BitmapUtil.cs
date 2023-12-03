@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public static class PerformanceOptions
 {

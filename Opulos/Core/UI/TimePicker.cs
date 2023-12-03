@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public class TimePicker : MaskedTextBox<DateTime>
 {
@@ -10,6 +10,10 @@ public class TimePicker : MaskedTextBox<DateTime>
 
     public ClockControl ClockMenu;
 
+    public TimePicker() : this(3, true, true, true, true)
+    {
+
+    }
     /// <summary>
     ///     <para>
     ///         Creates a time picker with the specified number of millisecond digits. The base format

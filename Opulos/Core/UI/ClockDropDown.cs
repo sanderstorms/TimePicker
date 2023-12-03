@@ -6,10 +6,10 @@ using System.Drawing.Text;
 using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
-using Opulos.Core.Drawing;
-using Opulos.Core.Localization;
+using TimePicker.Opulos.Core.Drawing;
+using TimePicker.Opulos.Core.Localization;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 ///<summary>A drop down user interface that displays an analogue clock.</summary>
 public class ClockControl : ToolStripDropDown

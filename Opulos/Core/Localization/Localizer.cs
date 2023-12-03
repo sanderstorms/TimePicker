@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using System.Threading;
 
-namespace Opulos.Core.Localization;
+namespace TimePicker.Opulos.Core.Localization;
 
 // Could not use the same resx across multiple projects because
 // the resx would combine with the default namespace of the assembly.

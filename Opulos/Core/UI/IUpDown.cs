@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 ///<summary>This interface allows any custom control to be used as the MaskedTextBox&lt;T&gt;'s Spinner control.</summary>
 public interface IUpDown

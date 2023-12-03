@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 public static class AssemblyUtils
 {

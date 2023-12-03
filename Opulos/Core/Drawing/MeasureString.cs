@@ -7,11 +7,12 @@ using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using Opulos.Core.UI;
-using Opulos.Core.Utils;
+using TimePicker.Opulos.Core.UI;
+using TimePicker.Opulos.Core.Utils;
+
 // MultiKey
 
-namespace Opulos.Core.Drawing;
+namespace TimePicker.Opulos.Core.Drawing;
 
 public static class MeasureString
 {

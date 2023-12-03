@@ -1,4 +1,4 @@
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public enum DrawMethod
 {

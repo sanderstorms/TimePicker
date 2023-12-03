@@ -7,9 +7,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using Opulos.Core.Win32;
+using TimePicker.Opulos.Core.Win32.Structs;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 /// <summary>
 ///     Attaches a drop down menu to a control, like the drop down window of a combo box. The drop down menu

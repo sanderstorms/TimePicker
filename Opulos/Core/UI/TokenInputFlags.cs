@@ -1,6 +1,6 @@
 using System;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 ///<summary>For a token object, the input flags indicate what types of characters its corresponding Mask accepts.
 [Flags]

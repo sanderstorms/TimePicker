@@ -1,4 +1,4 @@
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 public enum InvokeMethod
 {

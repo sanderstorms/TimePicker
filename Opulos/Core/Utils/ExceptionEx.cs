@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 // Use like ArgumentException, but in cases where a stack trace is needed.
 public class InvalidTypeException : Exception

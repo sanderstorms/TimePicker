@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 /// <summary>
 ///     Adds many useful features to the MaskTextBox, such as:
@@ -128,7 +128,12 @@ public abstract class MaskedTextBox<T> : MaskedTextBox
     }
     //------------
 
-    public MaskedTextBox(bool addUpDownSpinner = true)
+    public MaskedTextBox() : this(true)
+    {
+        
+    }
+
+    public MaskedTextBox(bool addUpDownSpinner)
     {
         Init(addUpDownSpinner);
     }

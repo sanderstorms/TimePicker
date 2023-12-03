@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 public static class ExceptionEx_Rethrow
 {

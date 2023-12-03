@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Opulos.Core.Utils;
+namespace TimePicker.Opulos.Core.Utils;
 
 public static partial class ExceptionEx
 {

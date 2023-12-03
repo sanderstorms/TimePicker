@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 /// <summary>
 ///     An extension method to add a repeat click feature to a button. Clicking and holding  on a button will cause it

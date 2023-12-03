@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 /// <summary>
 ///     It's possible to leverage the UpDownBase to represent a spinner control. The main disadvantage is that

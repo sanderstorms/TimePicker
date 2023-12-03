@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-namespace Opulos.Core.Win32;
+namespace TimePicker.Opulos.Core.Win32.Structs;
 
 public enum X
 {

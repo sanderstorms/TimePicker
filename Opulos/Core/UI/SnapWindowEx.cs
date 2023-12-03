@@ -3,9 +3,9 @@ using System.Collections;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Opulos.Core.Win32;
+using TimePicker.Opulos.Core.Win32.Structs;
 
-namespace Opulos.Core.UI;
+namespace TimePicker.Opulos.Core.UI;
 
 public class SnapPoint
 {

@@ -1,4 +1,4 @@
-namespace Opulos.Core.Localization;
+namespace TimePicker.Opulos.Core.Localization;
 
 public static class Strings
 {

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Opulos.Core.UI;
+using TimePicker.Opulos.Core.UI;
 
 namespace TimePicker.Test;
 
